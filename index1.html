@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: #00104b;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: scroll;
+            text-align: center;
+        }
+        .main{
+            width:80%;
+            display: grid;
+            grid-template-columns: 200px 100px 300px 200px 100px 100px 200px;
+            grid-template-rows: 200px 200px 200px;
+        }
+        .grid1 {
+            grid-area: 1/1/2/3;
+            background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 8px;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .grid2 {
+            grid-area: 1/3/2/6;
+            background: #fc4a1a;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #f7b733, #fc4a1a);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #f7b733, #fc4a1a);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 8px;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            /* flex-direction: column; */
+            align-items: center;
+
+        }
+
+        .grid3 {
+            grid-area: 1/6/2/8;
+            background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            margin: 8px;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .grid4 {
+            grid-area: 2/1/3/4;
+            background-color: rgba(243, 138, 0, 0.938);
+            margin: 8px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            /* flex-direction: column; */
+            align-items: center;
+        }
+
+        .grid5 {
+            grid-area: 2/4/3/8;
+            background-color: rgb(0, 183, 255);
+            margin: 8px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .grid6 {
+            grid-area: 3/1/4/2;
+            background-color: #0575e6;
+            margin: 8px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .grid7 {
+            grid-area: 3/2/4/5;
+            background: #0b486b;
+            background: -webkit-linear-gradient(
+          to right,
+          #f56217,
+          #0b486b
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f56217,
+          #0b486b
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 8px;
+            border-radius: 10px;
+        }
+
+        .grid8 {
+            grid-area: 3/5/4/7;
+            background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 8px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .grid9 {
+            grid-area: 3/7/4/8;
+            background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 8px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .cskimg {
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .words {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .picture {
+            width: 180px;
+            height: 180px;
+        }
+
+        .score {
+            color: white;
+            
+        }
+
+        .icons {
+            font-size: 100px;
+        }
+
+        .word {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            padding: 5px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .btn {
+            padding: 5px;
+            margin-bottom: 10px;
+            color: rgb(215, 78, 28);
+            font-weight: 700;
+        }
+
+        .btn2 {
+            padding: 5px;
+            margin-bottom: 10px;
+            color: rgb(83, 174, 204);
+            font-weight: 700;
+        }
+
+        @media(max-width:1120px) {
+            .container {
+                width: 100vw;
+                height: 110vh;
+                background-color: antiquewhite;
+                
+                overflow: scroll;
+            }
+            .main{
+            width:80%;
+            display: grid;
+            grid-template-columns: 250px 250px 250px;
+                grid-template-rows: 250px 250px 250px;
+                /* overflow: scroll; */
+        }
+            .grid1 {
+                grid-area: 1/1/2/2;
+                background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid2 {
+                grid-area: 1/2/2/3;
+                background: #fc4a1a;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #f7b733, #fc4a1a);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #f7b733, #fc4a1a);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            text-align: center;
+            }
+
+            .grid3 {
+                grid-area: 1/3/2/4;
+                background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid4 {
+                grid-area: 2/1/3/2;
+                background-color: rgba(243, 138, 0, 0.938);
+            }
+
+            .grid5 {
+                grid-area: 2/2/3/3;
+                background-color: rgb(0, 183, 255);
+            }
+
+            .grid6 {
+                grid-area: 2/3/3/4;
+                background-color: #0575e6;;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+            }
+
+            .grid7 {
+                grid-area: 3/1/4/2;
+                background: #0b486b;
+            background: -webkit-linear-gradient(
+          to right,
+          #f56217,
+          #0b486b
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f56217,
+          #0b486b
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        text-align: center;
+            }
+
+            .grid8 {
+                grid-area: 3/2/4/3;
+                background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid9 {
+                grid-area: 3/3/4/4;
+                background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .cskimg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .words {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                font-size: 15px;
+            }
+
+            .picture {
+                width: 150px;
+                height: 180px;
+                position: relative;
+                top: 25px;
+                left: 1px;
+            }
+
+            .score {
+                color: white;
+                font-size: 11px;
+            }
+
+            .btn {
+                padding: 2px;
+                margin-left: 1px;
+                margin-bottom: 10px;
+                color: rgb(215, 78, 28);
+                font-weight: 700;
+            }
+
+            .icons {
+                font-size: 50px;
+            }
+        }
+
+        @media(max-width:700px) {
+            .container {
+                width: 100vw;
+                height: 120vh;
+                background-color: antiquewhite;
+                display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: scroll;
+            }
+            .main{
+            width:100%;
+            display: grid;
+            grid-template-columns: 200px 200px;
+            grid-template-rows: 200px 200px 200px 200px;
+        }
+            .grid1 {
+                grid-area: 1/1/2/2;
+                background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid2 {
+                grid-area: 1/2/2/3;
+                background: #fc4a1a;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #f7b733, #fc4a1a);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #f7b733, #fc4a1a);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid3 {
+                grid-area: 2/1/3/2;
+                background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+            }
+
+            .grid4 {
+                grid-area: 2/2/3/3;
+                background-color: rgba(243, 138, 0, 0.938);
+            }
+
+            .grid5 {
+                grid-area: 3/1/4/2;
+                background: rgb(0, 183, 255);
+            }
+
+            .grid6 {
+                grid-area: 3/2/4/3;
+                background: #0575e6; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #021b79,
+          #0575e6
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #021b79,
+          #0575e6
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+            }
+
+            .grid7 {
+                grid-area: 4/1/5/2;
+                background: #0b486b; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f56217,
+          #0b486b
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f56217,
+          #0b486b
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid8 {
+                grid-area: 4/2/5/3;
+                background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .grid9 {
+                display: none;
+                background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        grid-area: 3/7/4/8;
+        flex-direction: column;
+            }
+
+            .words {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                font-size: 10px;
+            }
+
+            .picture {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                top: 40px;
+                left: 1px;
+            }
+
+            .word {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                padding: 10px;
+                margin-top: 10px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="grid1">
+                <h1>1260</h1>
+                <h5>sixes</h5>
+            </div>
+            <div class="grid2">
+                <!-- <img src="./images/year.jpg" alt="" srcset=""> -->
+                <div class="words">
+                    <h4>Winners</h4>
+                    <h2>CHENNAI SUPER KINGS</h1>
+                </div>
+                <img src="images/CSK.png" alt="" srcset="" class="cskimg">
+            </div>
+            <div class="grid3">
+                <h1>14</h1>
+                <h5>Hundreds</h5>
+            </div>
+            <div class="grid4">
+                <img src="images/2.png.avif" alt="" srcset="" class="picture">
+                <div class="score">
+                    <input type="button" value="Orange Cap" class="btn">
+                    <h2>Virat Kohli</h2>
+                    <h5>Total Runs - 741</h5>
+                    <h5>Strike Rate - 154.7</h5>
+                    <h5>Matches Played - 15</h5>
+                </div>
+            </div>
+            <div class="grid5">
+                <img src="images/33.png.avif" alt="" srcset="" class="picture">
+                <div class="score">
+                    <input type="button" value="FairPlay" class="btn2">
+                    <h2>Sunrises Hyderabad</h2>
+                    <p>Points - 173</p>
+                </div>
+            </div>
+            <div class="grid6">
+                <i class="fa-regular fa-image"></i>
+                <h5 class="word">Pics</h5>
+            </div>
+            <div class="grid7">
+                <div class="word">
+                    <h1>Interesting Facts</h1>
+                    <!-- <h4>"Kolkata Knight Riders crowned champions for the third time,</h4>
+                    <h4>having previously won in 2012,2014"</h4> -->
+                    <p>
+                        "Kolkata Knights Riders crowned champions for the third time, having previously won in 2012, 2014 "
+                      </p>
+                </div>
+            </div>
+            <div class="grid8">
+                <i class="fa-regular fa-file"></i>
+                <h5 class="word">Match Reports</h5>
+            </div>
+            <div class="grid9">
+                <i class="fa-brands fa-youtube"></i>
+                <h4 class="word">Highlights</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
